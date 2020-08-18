@@ -27,11 +27,13 @@
       <td>{{ course.name }}</td>
       <td>{{ course.price }}</td>
       <td>{{ course.code | lowercase }}</td>
-      <td>{{ course.releaseDate | date:'dd/MM/yyyy' | replace: '-':'*' }}</td>
+      <td>{{ course.releaseDate | date:'dd/MM/yyyy' | replace:'-':'*' }}</td>
       <td>
         <app-star [rating]="course.rating"></app-star>
       </td>
-      <td></td>
+      <td>
+        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>
+      </td>
     </tr>
   </tbody>
 </table>
